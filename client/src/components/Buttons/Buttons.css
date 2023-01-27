@@ -1,0 +1,30 @@
+.buttons{
+    position:absolute;
+    background: #D9D9D9;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.topCorner{
+    
+    left: 5%;
+}
+
+.homeButton{
+    top:13%
+}
+
+.submitButton{
+    top:22%
+}
+
+.createBlog{
+    bottom: 5%;
+    right: 5%;
+}
+
+.buttons:hover{
+    background: #aaa4a4;
+}

@@ -1,0 +1,41 @@
+#loaderContainer{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    transition: 1s linear;
+    animation-name: loader;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px white;
+}
+
+@keyframes loader {
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(0.3);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
