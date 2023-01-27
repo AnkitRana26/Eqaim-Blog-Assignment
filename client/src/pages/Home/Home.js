@@ -1,51 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import BlogCard from '../../components/BlogCard/BlogCard';
 import CreateBlogButton from '../../components/Buttons/CreateBlogButton';
+import { fetchBlogs } from '../../utils/api';
 import './Home.css'
 
 
-const data =[
-    {
-        id:1,
-        title:"Blog 1",
-        content:"This is 1 Blog and Good Blog"
-    },
-    {
-        id:2,
-        title:"Blog 2",
-        content:"This is 2 Blog and Good Blog"
-    },
-    {
-        id:3,
-        title:"Blog 3",
-        content:"This is 3 Blog and Good Blog"
-    },
-    {
-        id:4,
-        title:"Blog 4",
-        content:"This is 4 Blog and Good Blog"
-    },
-    {
-        id:5,
-        title:"Blog 5",
-        content:"This is 5 Blog and Good Blog"
-    }
-
-]
-
 const Home = () => {
-  return (
-    <div id='blogContainer'>
-        {
-            data.map(ele=>{
-                return <Link to={`/blog/${ele.id}`}><BlogCard key={ele.id} data={ele}/></Link>
-            })
-        }
 
-        <CreateBlogButton/>
-    </div>
-  )
+    const [blogs, setBlogs] = useState([]);
+
+    useEffect(() => {
+
+        fetchBlogs()
+            .then(blogs => setBlogs(blogs))
+            .catch(err => console.log('Error'));
+
+
+    }, [])
+
+    return (
+        <>
+            {
+
+                blogs.length == 0 ? <div id='emptyBlogContainer'>
+                    Post Some Blogs To See Blogs
+                </div> : <div id='blogContainer'>
+                    {
+                        blogs.map(ele => {
+                            return <Link to={`/blog/${ele._id}`}><BlogCard key={ele.id} data={ele} /></Link>
+                        })
+                    }
+
+                </div>
+            }
+            <CreateBlogButton />
+        </>
+    )
 }
 
 export default Home

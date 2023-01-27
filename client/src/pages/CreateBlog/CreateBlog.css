@@ -6,6 +6,7 @@
     background: #E9E9E9;
     border-radius: 5px;
     padding: 5px;
+
 }
 
 .inputField{
@@ -16,6 +17,7 @@
     background-color: inherit;
     border: none;
     border-radius: 3px;
+    width: 100%;
 
 }
 
@@ -41,4 +43,16 @@
 
 #blogHeading::placeholder{
     font-size: 2rem;
+}
+
+@media screen and (max-width:700px) {
+    #blogHeading{
+        font-size: 1.4rem;
+    }
+    #blogHeading::placeholder{
+        font-size: 1.4rem;
+    }
+    #contentBox{
+        font-size: 1rem;
+    }
 }

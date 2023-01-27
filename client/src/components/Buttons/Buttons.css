@@ -28,3 +28,19 @@
 .buttons:hover{
     background: #aaa4a4;
 }
+
+
+@media screen and (max-height:600px) {
+    .homeButton{
+        top:20%
+    }
+    
+    .submitButton{
+        top:32%
+    }
+
+    .topCorner{
+    
+        left: 1%;
+    }
+}

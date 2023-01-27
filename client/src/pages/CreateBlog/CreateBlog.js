@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HomeButton from '../../components/Buttons/HomeButton';
 import SubmitButton from '../../components/Buttons/SubmitButton';
 import IconBox from '../../components/IconBox/IconBox';
+import { postBlog } from '../../utils/api';
 import './CreateBlog.css';
 
 
@@ -13,6 +15,7 @@ const initialBlog={
 const CreateBlog = () => {
 
     const [blog,setBlog] = useState(initialBlog);
+    const navigate = useNavigate();
 
     const changeHandler =(e)=>{
         const {name,value} = e.target;
@@ -20,7 +23,10 @@ const CreateBlog = () => {
     }
 
     const submitBlog =()=>{
-        console.log("Hello");
+        console.log(blog)
+        postBlog(blog)
+        .then((res)=>navigate('/'))
+        .catch(err=>alert('Not Posted'))
     }
 
 
