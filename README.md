@@ -1,3 +1,18 @@
+# Github Repository Link 
+
+[https://github.com/AnkitRana26/Eqaim-Blog-Assignment.git](https://github.com/AnkitRana26/Eqaim-Blog-Assignment.git)
+
+<br>
+<br>
+
+# First Command in Client and Server directory
+    
+### npm install
+
+<br>
+<br>
+
+
 # Available Scripts
 
 ## In the Client directory, you can run:
